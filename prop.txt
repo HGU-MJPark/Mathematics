@@ -1,0 +1,8 @@
+;prop.txt
+(declare-const p Bool)
+(declare-const q Bool)
+(assert (and (=> p q)
+             (=> q (not p))
+             (not (or p q))))
+(check-sat)
+(get-model)
