@@ -21,7 +21,7 @@ int main(void){
   for (i=1; i<=9; i++)
       for (j=1; j<=9; j++)
           for (n=1; n<=9; n++)
-              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i, j,n);
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
 
 
   fprintf(fp,"(assert ");
@@ -87,10 +87,10 @@ int main(void){
   fprintf(fp,"))\n");
 
   fprintf(fp,"(assert ");
-  fprintf(fp,"(and ");
+  fprintf(fp,"(or ");
   for (i=1 ; i<=9 ; i++){
       j=i;
-      fprintf(fp,"(or ");
+      fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           if (p[i-1][j-1]==0)
               fprintf(fp,"p%d%d%d ",i,j,n);
@@ -102,10 +102,10 @@ int main(void){
   fprintf(fp,"))\n");
 
   fprintf(fp,"(assert ");
-  fprintf(fp,"(and ");
+  fprintf(fp,"(or ");
   for (i=1 ; i<=9 ; i++){
       j=10-i;
-      fprintf(fp,"(or ");
+      fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           if (p[i-1][j-1]==0)
               fprintf(fp,"p%d%d%d ",i,j,n);
@@ -134,3 +134,4 @@ int main(void){
 
 
 }
+
