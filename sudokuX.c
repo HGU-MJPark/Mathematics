@@ -97,7 +97,9 @@ int main(void){
           else
               fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
       }
+      fprintf(fp,")");
   }
+  fprintf(fp,"))\n");
 
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
@@ -110,8 +112,10 @@ int main(void){
           else
               fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
       }
+      fprintf(fp,")");
   }
-  
+  fprintf(fp,"))\n");
+
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
 
   fclose(fp);
