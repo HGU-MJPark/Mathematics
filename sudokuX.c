@@ -72,9 +72,9 @@ int main(void){
                   fprintf(fp,"(or ");
                   for (j=1 ; j<=3 ; j++){
                     if (p[i-1][j-1]==0)
-                        fprintf(fp,"p%d%d%d ",i,j,n);
+                        fprintf(fp,"p%d%d%d ",3r+i,3s+j,n);
                     else
-                        fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+                        fprintf(fp,"p%d%d%d ",3r+i,3s+j,p[3r+i-1][3s+j-1]);
                   }
                   fprintf(fp,")");
               }
