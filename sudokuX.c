@@ -85,8 +85,33 @@ int main(void){
       fprintf(fp,")");
   }
   fprintf(fp,"))\n");
-	
 
+  fprintf(fp,"(assert ");
+  fprintf(fp,"(and ");
+  for (i=1 ; i<=9 ; i++){
+      j=i;
+      fprintf(fp,"(and ");
+      for (n=1 ; n<=9 ; n++){
+          if (p[i-1][j-1]==0)
+              fprintf(fp,"p%d%d%d ",i,j,n);
+          else
+              fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+      }
+  }
+
+  fprintf(fp,"(assert ");
+  fprintf(fp,"(and ");
+  for (i=1 ; i<=9 ; i++){
+      j=10-i;
+      fprintf(fp,"(and ");
+      for (n=1 ; n<=9 ; n++){
+          if (p[i-1][j-1]==0)
+              fprintf(fp,"p%d%d%d ",i,j,n);
+          else
+              fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+      }
+  }
+  
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
 
   fclose(fp);
