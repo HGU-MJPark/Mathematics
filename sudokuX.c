@@ -85,6 +85,7 @@ int main(void){
       fprintf(fp,")");
   }
   fprintf(fp,"))\n");
+	
 
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
 
