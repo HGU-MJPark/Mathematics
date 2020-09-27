@@ -29,16 +29,26 @@ int main(void){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or "); 
-          for (j=1 ; j<=9 ; j++){
-		  if (p[i-1][j-1]==0)
-                  	fprintf(fp,"p%d%d%d ",i,j,n);
-		  else{
-                 	fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-			if(p[i-1][j-1]==n)
-				break;
-		  }  
-          }
-          fprintf(fp,")");
+	        for(int k=1; k<=9; k++){
+		          if(p[i-1][k-1]==n){
+			             fprintf(fp,"p%d%d%d ",i,k,n);
+			             break;
+		           }              
+	        }
+	        if(k==10){
+		          for (j=1 ; j<=9 ; j++){
+			             if (p[i-1][j-1]==0)
+                  		fprintf(fp,"p%d%d%d ",i,j,n);
+             		   else{
+                 		  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+		     		          if(p[i-1][j-1]==n)
+					                 break;
+			             }
+		          } 
+		   
+	        }	   		  
+      }
+      fprintf(fp,")");
       }
       fprintf(fp,")");
   }
@@ -49,17 +59,25 @@ int main(void){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
-          for (i=1 ; i<=9 ; i++){
-              if (p[i-1][j-1]==0)
-                  fprintf(fp,"p%d%d%d ",i,j,n);
-             else{
-                  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-		     if(p[i-1][j-1]==n)
-				break;
-	          
+          for(int k=1; k<=9; k++){
+		          if(p[k-1][j-1]==n){
+			             fprintf(fp,"p%d%d%d ",k,j,n);
+			             break;
+		           }              
+	        }
+	        if(k==10){
+		          for (i=1 ; i<=9 ; i++){
+			             if (p[i-1][j-1]==0)
+                  		fprintf(fp,"p%d%d%d ",i,j,n);
+             		   else{
+                 		  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+		     		          if(p[i-1][j-1]==n)
+					                 break;
+			             }
+		          } 
+	        }	   		  
 	     }
-	  }
-          fprintf(fp,")");
+       fprintf(fp,")");
       }
       fprintf(fp,")");
   }
@@ -152,4 +170,5 @@ int main(void){
 
 
 }
+
 
