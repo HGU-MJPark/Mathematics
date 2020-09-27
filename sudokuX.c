@@ -94,7 +94,7 @@ int main(void){
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-  	fprintf(fp,"(or ");
+  	fprintf(fp,"(and ");
   	for (i=1 ; i<=9 ; i++){
   		j=i;
 		if(p[i-1][j-1]==0)
@@ -112,7 +112,7 @@ int main(void){
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-  	fprintf(fp,"(or ");
+  	fprintf(fp,"(and ");
   	for (i=1 ; i<=9 ; i++){
   		j=10-i;
 		if(p[i-1][j-1]==0)
