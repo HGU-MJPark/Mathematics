@@ -4,7 +4,7 @@ int main(void){
 
   FILE * fp = fopen("formula", "w");
 
-  int i,j,n,r,s,;
+  int i,j,n,r,s;
 
   int p[9][9]={
     {0,3,0,8,4,0,0,0,0},
@@ -21,71 +21,42 @@ int main(void){
   for (i=1; i<=9; i++)
       for (j=1; j<=9; j++)
           for (n=1; n<=9; n++)
-		fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-	
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+
 
   fprintf(fp,"(assert (and ");
   for (i=1 ; i<=9 ; i++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
-          fprintf(fp,"(or "); 
-	        for(int k=1; k<=9; k++){
-		          if(p[i-1][k-1]==n){
-			             fprintf(fp,"p%d%d%d ",i,k,n);
-			             break;
-		           }              
-	        }
-	        if(k==10){
-		          for (j=1 ; j<=9 ; j++){
-			             if (p[i-1][j-1]==0)
-                  		fprintf(fp,"p%d%d%d ",i,j,n);
-             		   else{
-                 		  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-		     		          if(p[i-1][j-1]==n)
-					                 break;
-			             }
-		          } 
-		   
-	        }
-          fprintf(fp,")");	   		  
+          fprintf(fp,"(or ");
+          for (j=1 ; j<=9 ; j++){
+		   if (p[i-1][j-1]==0)
+                  fprintf(fp,"p%d%d%d ",i,j,n);
+		   else
+                  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+          }
+          fprintf(fp,")");
       }
       fprintf(fp,")");
-      
-      }
-      fprintf(fp,"))\n");
-      
-  
+  }
+  fprintf(fp,"))\n");
 
   fprintf(fp,"(assert (and ");
   for (j=1 ; j<=9 ; j++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
-          for(int k=1; k<=9; k++){
-		          if(p[k-1][j-1]==n){
-			             fprintf(fp,"p%d%d%d ",k,j,n);
-			             break;
-		           }              
-	        }
-	        if(k==10){
-		          for (i=1 ; i<=9 ; i++){
-			             if (p[i-1][j-1]==0)
-                  		fprintf(fp,"p%d%d%d ",i,j,n);
-             		   else{
-                 		  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-		     		          if(p[i-1][j-1]==n)
-					                 break;
-			             }
-		          } 
-	        }
-          fprintf(fp,")");	   		  
-	     }
-       fprintf(fp,")");
-       
+          for (i=1 ; i<=9 ; i++){
+              if (p[i-1][j-1]==0)
+                  fprintf(fp,"p%d%d%d ",i,j,n);
+              else
+                  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+          }
+          fprintf(fp,")");
       }
-      fprintf(fp,"))\n");
-
-  
+      fprintf(fp,")");
+  }
+  fprintf(fp,"))\n");
 
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
@@ -99,12 +70,9 @@ int main(void){
                   fprintf(fp,"(or ");
                   for (j=1 ; j<=3 ; j++){
                     if (p[3*r+i-1][3*s+j-1]==0)
-                       fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
-                  else{
+                        fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
+                    else
                         fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,p[3*r+i-1][3*s+j-1]);
-			if(p[3*r+i-1][3*s+j-1]==n)
-				break;
-		  }
                   }
                   fprintf(fp,")");
               }
@@ -125,18 +93,14 @@ int main(void){
   		j=i;
 		if(p[i-1][j-1]==0)
 			fprintf(fp,"p%d%d%d ",i,j,n);
-		else{
+		else
 			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-			if(p[i-1][j-1]==n)
-				break;
-		}
-		
   	}
 	fprintf(fp,")");
   }
   fprintf(fp,"))\n");
-      
-  
+
+
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
@@ -145,11 +109,8 @@ int main(void){
   		j=10-i;
 		if(p[i-1][j-1]==0)
 			fprintf(fp,"p%d%d%d ",i,j,n);
-		else{
+		else
 			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-			if(p[i-1][j-1]==n)
-				break;
-		}
   	}
 	fprintf(fp,")");
   }
