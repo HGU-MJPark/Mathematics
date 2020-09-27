@@ -20,8 +20,8 @@ int main(void){
 
   for (i=1; i<=9; i++)
       for (j=1; j<=9; j++)
-          //for (n=1; n<=9; n++)
-              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,p[i-1][j-1]);
+          for (n=1; n<=9; n++)
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
 
 
   fprintf(fp,"(assert (and ");
