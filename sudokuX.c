@@ -25,7 +25,7 @@ int main(void){
               		//fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
 		  //else
 			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-	//  }
+	  }
 
   fprintf(fp,"(assert (and ");
   for (i=1 ; i<=9 ; i++){
