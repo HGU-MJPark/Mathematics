@@ -99,7 +99,7 @@ int main(void){
       }
       fprintf(fp,")");
   }
-  fprintf(fp,"))\n");
+  fprintf(fp,")\n");
 
   fprintf(fp,"(assert ");
   //fprintf(fp,"(and ");
@@ -114,7 +114,7 @@ int main(void){
       }
       fprintf(fp,")");
   }
-  fprintf(fp,"))\n");
+  fprintf(fp,")\n");
 
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
 
