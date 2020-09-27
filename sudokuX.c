@@ -34,7 +34,7 @@ int main(void){
                   	fprintf(fp,"p%d%d%d ",i,j,n);
 		  else{
                  	fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-		  	break;
+		  	
 		  }  
           }
           fprintf(fp,")");
@@ -53,7 +53,7 @@ int main(void){
                   fprintf(fp,"p%d%d%d ",i,j,n);
              else{
                   fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-	          break;
+	          
 	     }
 	  }
           fprintf(fp,")");
@@ -77,7 +77,7 @@ int main(void){
                        fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
                   else{
                         fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,p[3*r+i-1][3*s+j-1]);
-			break;
+			
 		  }
                   }
                   fprintf(fp,")");
@@ -101,7 +101,7 @@ int main(void){
 			fprintf(fp,"p%d%d%d ",i,j,n);
 		else{
 			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-			
+			break;
 		}
 		
   	}
@@ -120,7 +120,7 @@ int main(void){
 			fprintf(fp,"p%d%d%d ",i,j,n);
 		else{
 			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
-			
+			break;
 		}
   	}
 	fprintf(fp,")");
