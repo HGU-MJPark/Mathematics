@@ -6,7 +6,7 @@ int main(void){
 
   int i,j,n,r,s;
 
-  /*int p[9][9]={
+  int p[9][9]={
     {0,3,0,8,4,0,0,0,0},
     {0,0,0,9,0,0,0,0,0},
     {0,0,5,0,0,0,0,0,0},
@@ -16,12 +16,12 @@ int main(void){
     {0,4,0,0,0,0,0,0,0},
     {0,0,8,6,0,0,9,0,0},
     {9,0,0,0,0,0,0,0,0}
-  };*/
+  };
 
   for (i=1; i<=9; i++)
       for (j=1; j<=9; j++)
           for (n=1; n<=9; n++)
-              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,p[i-1][j-1]);
 
 
   fprintf(fp,"(assert (and ");
