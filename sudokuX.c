@@ -33,7 +33,7 @@ int main(void){
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
           for (j=1 ; j<=9 ; j++){
-		  if (q[i-1][j-1]==0)
+		  if (p[i-1][j-1]==0)
                   fprintf(fp,"p%d%d%d ",i,j,n);
 		   else
                  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
