@@ -24,17 +24,13 @@ int main(void){
               fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
 
 
-  fprintf(fp,"(assert ");
-  fprintf(fp,"(and ");
+  fprintf(fp,"(assert (and ");
   for (i=1 ; i<=9 ; i++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
           for (j=1 ; j<=9 ; j++){
-              //if (p[i-1][j-1]==0)
                   fprintf(fp,"p%d%d%d ",i,j,n);
-              //else
-                  //fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
           }
           fprintf(fp,")");
       }
@@ -42,8 +38,7 @@ int main(void){
   }
   fprintf(fp,"))\n");
 
-  fprintf(fp,"(assert ");
-  fprintf(fp,"(and ");
+  fprintf(fp,"(assert (and ");
   for (j=1 ; j<=9 ; j++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
@@ -88,13 +83,13 @@ int main(void){
 
 
   fprintf(fp,"(assert ");
-  //fprintf(fp,"(or ");
+  fprintf(fp,"(and ");
   for (i=1 ; i<=9 ; i++){
       j=i;
       fprintf(fp,"(or ");
-          for (n=1 ; n<=9 ; n++){
+      for (n=1 ; n<=9 ; n++){
           //if (p[i-1][j-1]==0)
-              fprintf(fp,"p%d%d%d ",i,j,n);
+          fprintf(fp,"p%d%d%d ",i,j,n);
           //else
               //fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
 
@@ -102,12 +97,12 @@ int main(void){
       fprintf(fp,")");
 
   }
-  fprintf(fp,")\n");
+  fprintf(fp,"))\n");
 
 
 
   fprintf(fp,"(assert ");
-  //fprintf(fp,"(and ");
+  fprintf(fp,"(and ");
   for (i=1 ; i<=9 ; i++){
       j=10-i;
       fprintf(fp,"(or ");
@@ -120,7 +115,7 @@ int main(void){
       }
       fprintf(fp,")");
   }
-  fprintf(fp,")\n");
+  fprintf(fp,"))\n");
 
 
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
@@ -141,3 +136,4 @@ int main(void){
 
 
 }
+
