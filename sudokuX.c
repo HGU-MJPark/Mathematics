@@ -4,7 +4,7 @@ int main(void){
 
   FILE * fp = fopen("formula", "w");
 
-  int i,j,n,r,s;
+  int i,j,n,r,s,;
 
   int p[9][9]={
     {0,3,0,8,4,0,0,0,0},
@@ -46,13 +46,15 @@ int main(void){
 			             }
 		          } 
 		   
-	        }	   		  
+	        }
+          fprintf(fp,")");	   		  
       }
       fprintf(fp,")");
+      
       }
-      fprintf(fp,")");
-  }
-  fprintf(fp,"))\n");
+      fprintf(fp,"))\n");
+      
+  
 
   fprintf(fp,"(assert (and ");
   for (j=1 ; j<=9 ; j++){
@@ -75,13 +77,15 @@ int main(void){
 					                 break;
 			             }
 		          } 
-	        }	   		  
+	        }
+          fprintf(fp,")");	   		  
 	     }
        fprintf(fp,")");
+       
       }
-      fprintf(fp,")");
-  }
-  fprintf(fp,"))\n");
+      fprintf(fp,"))\n");
+
+  
 
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
@@ -170,5 +174,3 @@ int main(void){
 
 
 }
-
-
