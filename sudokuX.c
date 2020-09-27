@@ -96,10 +96,11 @@ int main(void){
               fprintf(fp,"p%d%d%d ",i,j,n);
           else
               fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+          fprintf(fp,")");    
       }
-      fprintf(fp,")");
+  fprintf(fp,")\n");
   }
-  fprintf(fp,"))\n");
+
 
   for (i=1 ; i<=9 ; i++){
       j=10-i;
@@ -111,10 +112,11 @@ int main(void){
               fprintf(fp,"p%d%d%d ",i,j,n);
           else
               fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+          fprintf(fp,")");
       }
-      fprintf(fp,")");
+    fprintf(fp,")\n");
   }
-  fprintf(fp,"))\n");
+
 
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
 
