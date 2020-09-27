@@ -20,8 +20,8 @@ int main(void){
 
   for (i=1; i<=9; i++)
       for (j=1; j<=9; j++)
-          //for (n=1; n<=9; n++)
-              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,p[i-1][j-1]);
+          for (n=1; n<=9; n++)
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
 
 
   fprintf(fp,"(assert (and ");
@@ -31,9 +31,9 @@ int main(void){
           fprintf(fp,"(or ");
           for (j=1 ; j<=9 ; j++){
 		   //if (p[i-1][j-1]==0)
-                  fprintf(fp,"p%d%d%d ",i,j,n);
+                  //fprintf(fp,"p%d%d%d ",i,j,n);
 		   //else
-                 // fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+                 fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
           }
           fprintf(fp,")");
       }
@@ -48,9 +48,9 @@ int main(void){
           fprintf(fp,"(or ");
           for (i=1 ; i<=9 ; i++){
               //if (p[i-1][j-1]==0)
-                  fprintf(fp,"p%d%d%d ",i,j,n);
+                  //fprintf(fp,"p%d%d%d ",i,j,n);
              // else
-                 // fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+                  fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
           }
           fprintf(fp,")");
       }
@@ -70,9 +70,9 @@ int main(void){
                   fprintf(fp,"(or ");
                   for (j=1 ; j<=3 ; j++){
                     //if (p[3*r+i-1][3*s+j-1]==0)
-                       fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
+                       //fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
                   //  else
-                       // fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,p[3*r+i-1][3*s+j-1]);
+                        fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,p[3*r+i-1][3*s+j-1]);
                   }
                   fprintf(fp,")");
               }
@@ -92,9 +92,9 @@ int main(void){
   	for (i=1 ; i<=9 ; i++){
   		j=i;
 		//if(p[i-1][j-1]==0)
-			fprintf(fp,"p%d%d%d ",i,j,n);
+			//fprintf(fp,"p%d%d%d ",i,j,n);
 		//else
-			//fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
   	}
 	fprintf(fp,")");
   }
@@ -108,9 +108,9 @@ int main(void){
   	for (i=1 ; i<=9 ; i++){
   		j=10-i;
 		//if(p[i-1][j-1]==0)
-			fprintf(fp,"p%d%d%d ",i,j,n);
+			//fprintf(fp,"p%d%d%d ",i,j,n);
 		//else
-			//fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
+			fprintf(fp,"p%d%d%d ",i,j,p[i-1][j-1]);
   	}
 	fprintf(fp,")");
   }
