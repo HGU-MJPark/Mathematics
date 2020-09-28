@@ -4,7 +4,7 @@ int main(void){
 
   FILE * fp = fopen("formula", "w");
 
-  int i,j,n,r,s,k;
+  int i,j,n,r,s,k,l;
 
   int p[9][9]={
     {0,3,0,8,4,0,0,0,0},
@@ -82,19 +82,21 @@ int main(void){
           fprintf(fp,"(and ");
           for (n=1 ; n<=9 ; n++){
               fprintf(fp,"(or ");
-              for (i=1 ; i<=3 ; i++){
-                  fprintf(fp,"(or ");
+              for(l=1; l<=3; l++){
                   for(k=1; k<=3; k++){
-                      if(p[3*r+i-1][3*s+k-1]==n){
-                          fprintf(fp,"p%d%d%d ",3*r+i,3*s+k,n);
-                          break;
+                      if(p[3*r+l-1][3*s+k-1]==n){
+                          fprintf(fp,"(or p%d%d%d) ",3*r+l,3*s+k,n);
+                          l=5;
                       }
                   }
-                  if(k==4){
+              }
+              if(l!=5){
+                  for(i=1; i<=3; i++){
+                      fprintf(fp,"(or ");
                       for(j=1; j<=3; j++)
-                          fprintf(fp,"p%d%d%d ", 3*r+i,3*s+j,n);
-                          }
-                  fprintf(fp,")");
+                          fprintf(fp,"p%d%d%d ", 3*r+i, 3*s+j, n);
+                      fprintf(fp,")");
+                  }
               }
               fprintf(fp,")");
           }
