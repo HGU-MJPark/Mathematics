@@ -45,7 +45,7 @@ int main(void){
         }
         fprintf(fp,")");
     }
-    fprintf(fp,")");
+    fprintf(fp,"))\n");
     
     
     fprintf(fp,"(assert (and ");
@@ -138,5 +138,3 @@ int main(void){
     pclose(fin);
 
 }
-
-
