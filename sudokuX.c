@@ -47,9 +47,7 @@ int main(void){
               for(j=1; j<=9; j++)
                   fprintf(fp,"p%d%d%d ", i,j,n);
                   }
-          else{
-              fprintf(fp,")");
-          }
+          fprintf(fp,")");
       }
       fprintf(fp,")");
   }
@@ -70,9 +68,7 @@ int main(void){
               for(i=1; i<=9; i++)
                   fprintf(fp,"p%d%d%d ", i,j,n);
                   }
-          else{
               fprintf(fp,")");
-          }
       }
       fprintf(fp,")");
   }
@@ -98,9 +94,7 @@ int main(void){
                       for(j=1; j<=9; j++)
                           fprintf(fp,"p%d%d%d ", i,j,n);
                           }
-                  else{
-                      fprintf(fp,")");
-                  }
+                  fprintf(fp,")");
               }
               fprintf(fp,")");
           }
@@ -124,9 +118,8 @@ int main(void){
       if(k==10)
           for(i=1;i<=9;i++)
               fprintf(fp,"p%d%d%d ",i,i,n);
-      else
-          fprintf(fp,")");
-      }
+      fprintf(fp,")");
+  }
     fprintf(fp, "))\n");
   
 
@@ -144,7 +137,6 @@ int main(void){
       if(k==10)
           for(i=1;i<=9;i++)
               fprintf(fp,"p%d%d%d ",i,10-i,n);
-      else
           fprintf(fp,")");
       }
     fprintf(fp,"))\n");
