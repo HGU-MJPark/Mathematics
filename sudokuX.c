@@ -85,7 +85,7 @@ int main(void){
               for(l=1; l<=3; l++){
                   for(k=1; k<=3; k++){
                       if(p[3*r+l-1][3*s+k-1]==n){
-                          fprintf(fp,"(or p%d%d%d) ",3*r+l,3*s+k,n);
+                          fprintf(fp,"p%d%d%d) ",3*r+l,3*s+k,n);
                           l=5;
                       }
                   }
