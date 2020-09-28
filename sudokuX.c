@@ -91,7 +91,9 @@ int main(void){
                       }
                   }
               }
-              if(l!=5){
+              if(l==5)
+                  break;
+              else{
                   for(i=1; i<=3; i++){
                       fprintf(fp,"(or ");
                       for(j=1; j<=3; j++)
@@ -165,3 +167,4 @@ int main(void){
 
 
 }
+
