@@ -36,15 +36,14 @@ int main(void){
   for (i=1 ; i<=9 ; i++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
-          
+          fprintf(fp,"(or ");
           for(k=1; k<=9; k++){
               if(p[i-1][k-1]==n){
-                  fprintf(fp,"(and p%d%d%d)",i,k,n);
+                  fprintf(fp,"p%d%d%d ",i,k,n);
                   break;
               }
           }
           if(k==10){
-              fprintf(fp,"(or ");
               for(j=1; j<=9; j++)
                   fprintf(fp,"p%d%d%d ", i,j,n);
                   }
@@ -58,15 +57,14 @@ int main(void){
   for (j=1 ; j<=9 ; j++){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
-          
+          fprintf(fp,"(or ");
           for(k=1; k<=9; k++){
               if(p[k-1][j-1]==n){
-                  fprintf(fp,"(and p%d%d%d)",k,j,n);
+                  fprintf(fp,"p%d%d%d ",k,j,n);
                   break;
               }
           }
           if(k==10){
-              fprintf(fp,"(or ");
               for(i=1; i<=9; i++)
                   fprintf(fp,"p%d%d%d ", i,j,n);
                   }
@@ -87,7 +85,7 @@ int main(void){
               for(l=1; l<=3; l++){
                   for(k=1; k<=3; k++){
                       if(p[3*r+l-1][3*s+k-1]==n){
-                          fprintf(fp,"(and p%d%d%d)",3*r+l,3*s+k,n);
+                          fprintf(fp,"(or p%d%d%d)",3*r+l,3*s+k,n);
                           l=10;
                       }
                   }
@@ -112,15 +110,14 @@ int main(void){
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-     
+      fprintf(fp,"(or ");
     for(k=1; k<=9; k++){
         if(p[k-1][k-1]==n){
-            fprintf(fp,"(and p%d%d%d)",k,k,n);
+            fprintf(fp,"p%d%d%d ",k,k,n);
             break;
         }
     }
       if(k==10)
-           fprintf(fp,"(or ");
           for(i=1;i<=9;i++)
               fprintf(fp,"p%d%d%d ",i,i,n);
       fprintf(fp,")");
@@ -132,15 +129,14 @@ int main(void){
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-      
+      fprintf(fp,"(or ");
       for(k=1; k<=9; k++){
         if(p[k-1][9-k]==n){
-            fprintf(fp,"(and p%d%d%d)",k,10-k,n);
+            fprintf(fp,"p%d%d%d ",k,10-k,n);
             break;
         }
     }
       if(k==10)
-          fprintf(fp,"(or ");
           for(i=1;i<=9;i++)
               fprintf(fp,"p%d%d%d ",i,10-i,n);
           fprintf(fp,")");
@@ -168,3 +164,4 @@ int main(void){
 
 
 }
+
