@@ -37,20 +37,19 @@ int main(void){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
-          for (j=1 ; j<=9 ; j++){
-                for(k=1; k<=9; k++){
+          for(k=1; k<=9; k++){
               if(p[i-1][k-1]==n){
-                fprintf(fp,"p%d%d%d ", i,k,n);
-                break;
-            }
-        }
-        if(k==10)
-            fprintf(fp,"p%d%d%d ",i,j,n);
-        else
-            break;
-
+                  fprintf(fp,"p%d%d%d ",i,k,n);
+                  break;
+              }
           }
-          fprintf(fp,")");
+          if(k==10){
+              for(j=1; j<=9; j++)
+                  fprintf(fp,"p%d%d%D ", i,j,n);
+                  }
+          else{
+              fprintf(fp,")");
+          }
       }
       fprintf(fp,")");
   }
@@ -61,19 +60,19 @@ int main(void){
       fprintf(fp,"(and ");
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
-          for (i=1 ; i<=9 ; i++){
-                  for(k=1; k<=9; k++){
-              if(p[i-1][k-1]==n){
-                fprintf(fp,"p%d%d%d ", i,k,n);
-                break;
-            }
-        }
-        if(k==10)
-            fprintf(fp,"p%d%d%d ",i,j,n);
-        else
-            break;
+          for(k=1; k<=9; k++){
+              if(p[k-1][j-1]==n){
+                  fprintf(fp,"p%d%d%d ",k,j,n);
+                  break;
+              }
           }
-          fprintf(fp,")");
+          if(k==10){
+              for(i=1; i<=9; i++)
+                  fprintf(fp,"p%d%d%D ", i,j,n);
+                  }
+          else{
+              fprintf(fp,")");
+          }
       }
       fprintf(fp,")");
   }
@@ -89,19 +88,19 @@ int main(void){
               fprintf(fp,"(or ");
               for (i=1 ; i<=3 ; i++){
                   fprintf(fp,"(or ");
-                  for (j=1 ; j<=3 ; j++){
-              for(k=1; k<=3; k++){
-                  if(p[3*r+i-1][3*s+k-1]==n){
-                    fprintf(fp,"p%d%d%d ", 3*r+i,3*s+k,n);
-                    break;
-                }
-            }
-            if(k==4)
-                fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
-            else
-                break;
+                  for(k=1; k<=3; k++){
+                      if(p[i-1][k-1]==n){
+                          fprintf(fp,"p%d%d%d ",i,k,n);
+                          break;
+                      }
                   }
-                  fprintf(fp,")");
+                  if(k==4){
+                      for(j=1; j<=9; j++)
+                          fprintf(fp,"p%d%d%D ", i,j,n);
+                          }
+                  else{
+                      fprintf(fp,")");
+                  }
               }
               fprintf(fp,")");
           }
