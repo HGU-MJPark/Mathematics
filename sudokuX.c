@@ -5,10 +5,13 @@ int main(void){
 
     int i, j, r, s, n, m;
 
-    for (i = 1 ; i <= 9 ; i++)
-        for (j = 1 ; j <= 9 ; j++)
-            for(n=1; n<=9; n++)
+    for (i = 1 ; i <= 9 ; i++){
+        for (j = 1 ; j <= 9 ; j++){
+            for(n=1; n<=9; n++){
                 fprintf(fp,"(declare-const p%d%d%d Bool)\n", i, j,n) ;
+            }
+        }
+    }
     
     fprintf(fp, "(assert (and p123 p148 p154 p249 p335 p412 p425 p467 p474 p488 p531 p583 p627 p633 p691 p724 p838 p846 p879 p919))");
     
@@ -135,4 +138,5 @@ int main(void){
     pclose(fin);
 
 }
+
 
