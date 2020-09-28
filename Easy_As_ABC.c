@@ -3,7 +3,7 @@
 int main(void){
     FILE * fp = fopen("formula", "w") ;
     
-    int i,j,n;
+    int i,j,n,m;
     char s[6]={' ','A','B','C','D','E'};
     
     fprintf(fp, "(assert (and (or p11A p21A)(or p14E p24E)(or p31A p32A)(or p41D p42D)(or p62B p52B)(or p63C p53C)(or p66A p56A)(or p16E p15E)(or p36B p35B)(or p46E p45E)))");
@@ -16,7 +16,7 @@ int main(void){
             for(n=0; n<=4; n++){
                 fprintf(fp,"(and ");
                 for(m=n+1; m<=5; m++){
-                    fprintf(fp,"(not (and p%d%d%c p%d%d%c))", i, j, s(n), i, j,s(m)) ;
+                    fprintf(fp,"(not (and p%d%d%c p%d%d%c))", i, j, s[n], i, j,s[m]) ;
                 }
                 fprintf(fp,")");
             }
@@ -40,7 +40,7 @@ int main(void){
         for(j=1; j<=6; j++){
             fprintf(fp,"(or ");
             for(n=1; n<=5; n++){
-                fprintf(fp,"p%d%d%d ", i, j, s(n));
+                fprintf(fp,"p%d%d%d ", i, j, s[n]);
             }
             fprintf(fp,")");
         }
