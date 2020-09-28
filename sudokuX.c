@@ -86,14 +86,12 @@ int main(void){
                   for(k=1; k<=3; k++){
                       if(p[3*r+l-1][3*s+k-1]==n){
                           fprintf(fp,"(or p%d%d%d)",3*r+l,3*s+k,n);
-                          l=5;
+                          l=0;
                           break;
                       }
                   }
               }
-              if(l==5)
-                  break;
-              else{
+              if(l!=0){
                   for(i=1; i<=3; i++){
                       fprintf(fp,"(or ");
                       for(j=1; j<=3; j++)
@@ -167,4 +165,3 @@ int main(void){
 
 
 }
-
