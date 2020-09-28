@@ -85,14 +85,14 @@ int main(void){
               for (i=1 ; i<=3 ; i++){
                   fprintf(fp,"(or ");
                   for(k=1; k<=3; k++){
-                      if(p[i-1][k-1]==n){
-                          fprintf(fp,"p%d%d%d ",i,k,n);
+                      if(p[3*r+i-1][3*s+k-1]==n){
+                          fprintf(fp,"p%d%d%d ",3*r+i,3*s+k,n);
                           break;
                       }
                   }
                   if(k==4){
-                      for(j=1; j<=9; j++)
-                          fprintf(fp,"p%d%d%d ", i,j,n);
+                      for(j=1; j<=3; j++)
+                          fprintf(fp,"p%d%d%d ", 3*r+i,3*s+j,n);
                           }
                   fprintf(fp,")");
               }
