@@ -18,18 +18,18 @@ int main(void){
     {9,0,0,0,0,0,0,0,0}
   };
 
-  for (i=1; i<=9; i++){
-      for (j=1; j<=9; j++){
-          for (n=1; n<=9; n++){
-          if(p[i-1][j-1]==n){
+  for (i=1; i<=9; i++)
+      for (j=1; j<=9; j++)
+          for (n=1; n<=9; n++)
+          //if(p[i-1][j-1]==n){
               fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-              break;
-          }
-          else
-              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-      }
-      }
-  }
+              //break;
+          //}
+          //else
+              //fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+      //}
+     // }
+  //}
 
 
   fprintf(fp,"(assert (and ");
