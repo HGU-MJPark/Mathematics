@@ -96,7 +96,7 @@ int main(void){
 					break;
 				}
 			}
-			if(k==10)
+			if(k==4)
 				fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
 			else
 				break;
