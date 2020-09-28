@@ -90,7 +90,7 @@ int main(void){
                       }
                   }
               }
-              if(l!=10){
+              if(l!=11){
                   for(i=1; i<=3; i++){
                       fprintf(fp,"(or ");
                       for(j=1; j<=3; j++)
