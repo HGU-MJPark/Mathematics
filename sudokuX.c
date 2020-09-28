@@ -87,7 +87,6 @@ int main(void){
                       if(p[3*r+l-1][3*s+k-1]==n){
                           fprintf(fp,"(or p%d%d%d)",3*r+l,3*s+k,n);
                           l=0;
-                          break;
                       }
                   }
               }
@@ -165,3 +164,4 @@ int main(void){
 
 
 }
+
