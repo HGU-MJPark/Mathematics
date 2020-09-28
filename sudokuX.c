@@ -21,13 +21,13 @@ int main(void){
   for (i=1; i<=9; i++){
       for (j=1; j<=9; j++){
           for (n=1; n<=9; n++){
-		  if(p[i-1][j-1]==n){
-			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-			  break;
-		  }
-		  else
-			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
-	  }
+          if(p[i-1][j-1]==n){
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+              break;
+          }
+          else
+              fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+      }
       }
   }
 
@@ -39,15 +39,15 @@ int main(void){
           fprintf(fp,"(or ");
           for (j=1 ; j<=9 ; j++){
                 for(k=1; k<=9; k++){
-		  	if(p[i-1][k-1]==n){
-				fprintf(fp,"p%d%d%d ", i,k,n);
-				break;
-			}
-		}
-		if(k==10)
-			fprintf(fp,"p%d%d%d ",i,j,n);
-		else
-			break;
+              if(p[i-1][k-1]==n){
+                fprintf(fp,"p%d%d%d ", i,k,n);
+                break;
+            }
+        }
+        if(k==10)
+            fprintf(fp,"p%d%d%d ",i,j,n);
+        else
+            break;
 
           }
           fprintf(fp,")");
@@ -63,15 +63,15 @@ int main(void){
           fprintf(fp,"(or ");
           for (i=1 ; i<=9 ; i++){
                   for(k=1; k<=9; k++){
-		  	if(p[i-1][k-1]==n){
-				fprintf(fp,"p%d%d%d ", i,k,n);
-				break;
-			}
-		}
-		if(k==10)
-			fprintf(fp,"p%d%d%d ",i,j,n);
-		else
-			break;
+              if(p[i-1][k-1]==n){
+                fprintf(fp,"p%d%d%d ", i,k,n);
+                break;
+            }
+        }
+        if(k==10)
+            fprintf(fp,"p%d%d%d ",i,j,n);
+        else
+            break;
           }
           fprintf(fp,")");
       }
@@ -90,16 +90,16 @@ int main(void){
               for (i=1 ; i<=3 ; i++){
                   fprintf(fp,"(or ");
                   for (j=1 ; j<=3 ; j++){
-			  for(k=1; k<=3; k++){
-		  		if(p[3*r+i-1][3*s+k-1]==n){
-					fprintf(fp,"p%d%d%d ", 3*r+i,3*s+k,n);
-					break;
-				}
-			}
-			if(k==4)
-				fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
-			else
-				break;
+              for(k=1; k<=3; k++){
+                  if(p[3*r+i-1][3*s+k-1]==n){
+                    fprintf(fp,"p%d%d%d ", 3*r+i,3*s+k,n);
+                    break;
+                }
+            }
+            if(k==4)
+                fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
+            else
+                break;
                   }
                   fprintf(fp,")");
               }
@@ -115,43 +115,42 @@ int main(void){
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-  	fprintf(fp,"(or ");
-	for(k=1; k<=9; k++){
-		if(p[k-1][k-1]==n){
-			fprintf(fp,"p%d%d%d ",k,k,n);
-			break;
-		}
-	}
-	  if(k==10)
-		  for(i=1;i<=9;i++)
-			  fprintf(fp,"p%d%d%d ",i,i,n);
-	  else
-		  break;
-  	}
-	fprintf(fp,")");
-  }
-  fprintf(fp,"))\n");
+      fprintf(fp,"(or ");
+    for(k=1; k<=9; k++){
+        if(p[k-1][k-1]==n){
+            fprintf(fp,"p%d%d%d ",k,k,n);
+            break;
+        }
+    }
+      if(k==10)
+          for(i=1;i<=9;i++)
+              fprintf(fp,"p%d%d%d ",i,i,n);
+      else
+          fprintf(fp,")");
+      }
+    fprintf(fp, "))\n");
+  
 
 
   fprintf(fp,"(assert ");
   fprintf(fp,"(and ");
   for(n=1; n<=9; n++){
-  	fprintf(fp,"(or ");
-  	for(k=1; k<=9; k++){
-		if(p[k-1][9-k]==n){
-			fprintf(fp,"p%d%d%d ",k,10-k,n);
-			break;
-		}
-	}
-	  if(k==10)
-		  for(i=1;i<=9;i++)
-			  fprintf(fp,"p%d%d%d ",i,10-i,n);
-	  else
-		  break;
-  	}
-	fprintf(fp,")");
-  }
-  fprintf(fp,"))\n");
+      fprintf(fp,"(or ");
+      for(k=1; k<=9; k++){
+        if(p[k-1][9-k]==n){
+            fprintf(fp,"p%d%d%d ",k,10-k,n);
+            break;
+        }
+    }
+      if(k==10)
+          for(i=1;i<=9;i++)
+              fprintf(fp,"p%d%d%d ",i,10-i,n);
+      else
+          fprintf(fp,")");
+      }
+    fprintf(fp,"))\n");
+  
+  
 
 
   fprintf(fp,"(check-sat)\n(get-model)\n") ;
@@ -159,16 +158,16 @@ int main(void){
   fclose(fp);
 
   FILE * fin = popen("z3 formula", "r") ;
-	char buf[128] ;
-	fscanf(fin, "%s %s", buf, buf) ;
-	while (!feof(fin)) {
-		fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-		fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-		fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-		fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-		fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
-	}
-	pclose(fin) ;
+    char buf[128] ;
+    fscanf(fin, "%s %s", buf, buf) ;
+    while (!feof(fin)) {
+        fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+        fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+        fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+        fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+        fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
+    }
+    pclose(fin) ;
 
 
 }
