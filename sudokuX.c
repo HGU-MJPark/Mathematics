@@ -36,7 +36,12 @@ int main(void){
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
           for (j=1 ; j<=9 ; j++){
-                  fprintf(fp,"p%d%d%d ",i,j,n);
+                  if(p[i-1][j-1]==n){
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+			  break;
+		  }
+		  else
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
           }
           fprintf(fp,")");
       }
@@ -50,7 +55,12 @@ int main(void){
       for (n=1 ; n<=9 ; n++){
           fprintf(fp,"(or ");
           for (i=1 ; i<=9 ; i++){
-                  fprintf(fp,"p%d%d%d ",i,j,n);
+                  if(p[i-1][j-1]==n){
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+			  break;
+		  }
+		  else
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
           }
           fprintf(fp,")");
       }
@@ -69,7 +79,12 @@ int main(void){
               for (i=1 ; i<=3 ; i++){
                   fprintf(fp,"(or ");
                   for (j=1 ; j<=3 ; j++){
-                        fprintf(fp,"p%d%d%d ",3*r+i,3*s+j,n);
+			  if(p[3*r+i-1][3*s+j-1]==n){
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", 3*r+i,3*s+j,n);
+			  break;
+		  }
+		  else
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", 3*r+i,3*s+j,n);
                   }
                   fprintf(fp,")");
               }
@@ -88,7 +103,12 @@ int main(void){
   	fprintf(fp,"(or ");
   	for (i=1 ; i<=9 ; i++){
   		j=i;
-			fprintf(fp,"p%d%d%d ",i,j,n);
+		if(p[i-1][j-1]==n){
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+			  break;
+		  }
+		  else
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
   	}
 	fprintf(fp,")");
   }
@@ -101,7 +121,12 @@ int main(void){
   	fprintf(fp,"(or ");
   	for (i=1 ; i<=9 ; i++){
   		j=10-i;
-			fprintf(fp,"p%d%d%d ",i,j,n);
+		if(p[i-1][j-1]==n){
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
+			  break;
+		  }
+		  else
+			  fprintf(fp,"(declare-const p%d%d%d Bool)\n", i,j,n);
   	}
 	fprintf(fp,")");
   }
