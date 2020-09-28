@@ -45,7 +45,7 @@ int main(void){
           }
           if(k==10){
               for(j=1; j<=9; j++)
-                  fprintf(fp,"p%d%d%D ", i,j,n);
+                  fprintf(fp,"p%d%d%d ", i,j,n);
                   }
           else{
               fprintf(fp,")");
@@ -68,7 +68,7 @@ int main(void){
           }
           if(k==10){
               for(i=1; i<=9; i++)
-                  fprintf(fp,"p%d%d%D ", i,j,n);
+                  fprintf(fp,"p%d%d%d ", i,j,n);
                   }
           else{
               fprintf(fp,")");
@@ -96,7 +96,7 @@ int main(void){
                   }
                   if(k==4){
                       for(j=1; j<=9; j++)
-                          fprintf(fp,"p%d%d%D ", i,j,n);
+                          fprintf(fp,"p%d%d%d ", i,j,n);
                           }
                   else{
                       fprintf(fp,")");
