@@ -89,7 +89,7 @@ int main(void){
                           l=5;
                           break;
                       }
-                  }printf("%d%d%d%d%d%d%d%d%d",l,l,l,l,l,l,l,l,l);
+                  }fprintff(fp,"%d%d%d%d%d%d%d%d%d",l,l,l,l,l,l,l,l,l);
               }
               if(l!=5){
                   for(i=1; i<=3; i++){
