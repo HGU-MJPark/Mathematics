@@ -87,8 +87,9 @@ int main(void){
                       if(p[3*r+l-1][3*s+k-1]==n){
                           fprintf(fp,"p%d%d%d) ",3*r+l,3*s+k,n);
                           l=5;
+                          break;
                       }
-                  }
+                  }printf("%d%d%d%d%d%d%d%d%d",l,l,l,l,l,l,l,l,l);
               }
               if(l!=5){
                   for(i=1; i<=3; i++){
