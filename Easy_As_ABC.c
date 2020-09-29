@@ -14,7 +14,19 @@ int main(void){
         }
     }
     
-    fprintf(fp, "(assert (and (or p11'A' p21'A')(or p14'E' p24s'E')(or p31'A' p32'A')(or p41'D' p42'D')(or p62'B' p52'B')(or p63'C' p53'C')(or p66'A' p56'A')(or p16'E' p15'E')(or p36'B' p35'B')(or p46'E' p45'E')))");
+    fprintf(fp, "(assert (and");
+    fprintf(fp, "(or p11%c p21%c)", s[1],s[1]);
+    fprintf(fp, "(or p14%c p24%c)", s[5],s[5]);
+    fprintf(fp, "(or p31%c p32%c)", s[1],s[1]);
+    fprintf(fp, "(or p41%c p42%c)", s[4],s[4]);
+    fprintf(fp, "(or p62%c p52%c)", s[2],s[2]);
+    fprintf(fp, "(or p63%c p53%c)", s[3],s[3]);
+    fprintf(fp, "(or p66%c p56%c)", s[1],s[1]);
+    fprintf(fp, "(or p16%c p15%c)", s[5],s[5]);
+    fprintf(fp, "(or p36%c p35%c)", s[2],s[2]);
+    fprintf(fp, "(or p46%c p45%c)));\n", s[5],s[5]);
+    
+
     
     fprintf(fp,"(assert (and ");
     for(i=1; i<=6; i++){
