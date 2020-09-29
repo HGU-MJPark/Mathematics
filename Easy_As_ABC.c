@@ -15,16 +15,16 @@ int main(void){
     }
     
     fprintf(fp, "(assert (and");
-    fprintf(fp, "(or p11%c p21%c)", s[1],s[1]);
-    fprintf(fp, "(or p14%c p24%c)", s[5],s[5]);
-    fprintf(fp, "(or p31%c p32%c)", s[1],s[1]);
-    fprintf(fp, "(or p41%c p42%c)", s[4],s[4]);
-    fprintf(fp, "(or p62%c p52%c)", s[2],s[2]);
-    fprintf(fp, "(or p63%c p53%c)", s[3],s[3]);
-    fprintf(fp, "(or p66%c p56%c)", s[1],s[1]);
-    fprintf(fp, "(or p16%c p15%c)", s[5],s[5]);
-    fprintf(fp, "(or p36%c p35%c)", s[2],s[2]);
-    fprintf(fp, "(or p46%c p45%c)));\n", s[5],s[5]);
+    fprintf(fp, "(or (and p11%c p21%c) p11%c)", s[0],s[1],s[1]);
+    fprintf(fp, "(or (and p14%c p24%c) p14%c)", s[0],s[5],s[5]);
+    fprintf(fp, "(or (and p31%c p32%c) p31%c)", s[0],s[1],s[1]);
+    fprintf(fp, "(or (and p41%c p42%c) p41%c)", s[0],s[4],s[4]);
+    fprintf(fp, "(or (and p62%c p52%c) p62%c)", s[0],s[2],s[2]);
+    fprintf(fp, "(or (and p63%c p53%c) p63%c)", s[0],s[3],s[3]);
+    fprintf(fp, "(or (and p66%c p56%c) p66%c)", s[0],s[1],s[1]);
+    fprintf(fp, "(or (and p16%c p15%c) p16%c)", s[0],s[5],s[5]);
+    fprintf(fp, "(or (and p36%c p35%c) p36%c)", s[0],s[2],s[2]);
+    fprintf(fp, "(or (and p46%c p45%c) p46%c));\n", s[0],s[5],s[5]);
     
 
     
