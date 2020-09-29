@@ -6,10 +6,10 @@ int main(void){
     int i,j,n,m;
     char s[6]={' ','A','B','C','D','E'};
     
-    for (i = 1 ; i <= 6 ; i++){
-        for (j = 1 ; j <= 6 ; j++){
+    for(i=1; i<=6; i++){
+        for(j=1; j<=6; j++){
             for(n=0; n<6; n++){
-                fprintf(fp,"(declare-const p%d%d%c Bool)\n", i, j,s[n]) ;
+                fprintf(fp, "(declare-const p%d%d%c Bool)\n", i, j, s[n]);
             }
         }
     }
@@ -34,13 +34,7 @@ int main(void){
     }
     fprintf(fp,"))\n");
     
-    for(i=1; i<=6; i++){
-        for(j=1; j<=6; j++){
-            for(n=0; n<6; n++){
-                fprintf(fp, "(declare-const p%d%d%c Bool)\n", i, j, s[n]);
-            }
-        }
-    }
+    
     
     fprintf(fp,"(assert (and ");
     for(i=1; i<=6; i++){
