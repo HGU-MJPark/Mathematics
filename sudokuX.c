@@ -47,20 +47,7 @@ int main(void){
     }
     fprintf(fp,"))\n");
     
-    
-    fprintf(fp,"(assert (and ");
-    for (i=1 ; i<=9 ; i++){
-        fprintf(fp,"(and ");
-        for (n=1 ; n<=9 ; n++){
-            fprintf(fp,"(or ");
-            for(j=1; j<=9; j++){
-                fprintf(fp,"p%d%d%d ", i,j,n);
-            }
-            fprintf(fp,")");
-        }
-        fprintf(fp,")");
-    }
-    fprintf(fp,"))\n");
+
     
     fprintf(fp,"(assert (and ");
     for (j=1 ; j<=9 ; j++){
