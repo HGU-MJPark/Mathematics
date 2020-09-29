@@ -6,7 +6,7 @@ int main(void){
     int i,j,n,m;
     char s[6]={' ','A','B','C','D','E'};
     
-    fprintf(fp, "(assert (and (or p11A p21A)(or p14E p24E)(or p31A p32A)(or p41D p42D)(or p62B p52B)(or p63C p53C)(or p66A p56A)(or p16E p15E)(or p36B p35B)(or p46E p45E)))");
+    fprintf(fp, "(assert (and (or p11s[1] p21s[1])(or p14s[5] p24s[5])(or p31s[1] p32s[1])(or p41s[4] p42s[4])(or p62s[2] p52s[2])(or p63s[3] p53s[3])(or p66s[1] p56s[1])(or p16s[5] p15s[5])(or p36s[2] p35s[2])(or p46s[5] p45s[5])))");
     
     fprintf(fp,"(assert (and ");
     for(i=1; i<=6; i++){
