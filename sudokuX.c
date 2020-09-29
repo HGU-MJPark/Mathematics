@@ -14,10 +14,10 @@ int main(void){
     }
     
     fprintf(fp, "(assert (and ");
-    printf("row () column () 의 값을 입력하시오. 비어있는 값은 0을 입력하시오. ");
+    printf("row () column () 의 값을 입력하시오. 비어있는 값은 0을 입력하시오.\n\n ");
     for(i=1; i<=9; i++){
         for(j=1; j<=9; j++){
-            printf("row %d column %d 의 값을 입력하시오. 비어있는 값은 0을 입력하시오. ",i,j);
+            printf("row %d column %d 의 값을 입력하시오 : ",i,j);
             scanf("%d", &n);
             if(n!=0)
                 fprintf(fp,"p%d%d%d ",i,j,n);
