@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void){
-    FILE * fp = fopen("formula", "w") ;
+    FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
 
@@ -24,10 +24,6 @@ int main(void){
         }
     }
     fprintf(fp, "))\n");
-    
-    /*
-    fprintf(fp, "(assert (and p123 p148 p154 p249 p335 p412 p425 p467 p474 p488 p531 p583 p627 p633 p691 p724 p838 p846 p879 p919))");
-    */
      
     fprintf(fp,"(assert (and ");
     for(i=1; i<=9; i++){
@@ -149,5 +145,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
     }
     pclose(fin);
+    
+  
 
 }
