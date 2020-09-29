@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void){
-    FILE * fp = fopen("formula", "w") ;
+    FILE * fp = fopen("abc_formula", "w") ;
     
     int i,j,n,m;
     char s[6]={' ','A','B','C','D','E'};
@@ -80,7 +80,7 @@ int main(void){
 
     fclose(fp) ;
 
-    FILE * fin = popen("z3 formula", "r") ;
+    FILE * fin = popen("z3 abc_formula", "r") ;
     char buf[128] ;
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
@@ -92,5 +92,3 @@ int main(void){
     }
     pclose(fin);
 }
-
-
