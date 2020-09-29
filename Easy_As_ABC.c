@@ -24,7 +24,7 @@ int main(void){
     fprintf(fp, "(or (and p66%c p56%c) p66%c)", s[0],s[1],s[1]);
     fprintf(fp, "(or (and p16%c p15%c) p16%c)", s[0],s[5],s[5]);
     fprintf(fp, "(or (and p36%c p35%c) p36%c)", s[0],s[2],s[2]);
-    fprintf(fp, "(or (and p46%c p45%c) p46%c));\n", s[0],s[5],s[5]);
+    fprintf(fp, "(or (and p46%c p45%c) p46%c)));\n", s[0],s[5],s[5]);
     
 
     
