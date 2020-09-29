@@ -134,7 +134,7 @@ int main(void){
 
     fclose(fp) ;
 
-    FILE * fin = popen("z3 formula", "r") ;
+    FILE * fin = popen("z3 formula.txt", "r") ;
     char buf[128] ;
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
