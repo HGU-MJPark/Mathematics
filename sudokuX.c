@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
+    int out[9][9];
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -136,16 +139,29 @@ int main(void){
 
     FILE * fin = popen("z3 formula.txt", "r") ;
     char buf[128] ;
+    char output[128];
+    char true[]= "true";
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+                strcpy(output, buf);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
+                if(strncmp(buf,true,4)==0){
+                    i=atoi(&output[1]);
+                    j=atoi(&output[2]);
+                    n=atoi(&output[3]);
+                    out[i-1][j-1]=n;
+                }
     }
     pclose(fin);
     
-  
-
+    for(i=0; i<9; i++){
+        for(j=0; j<9; j++){
+            printf("%d ", out[i][j]);
+        }
+        printf("\n");
+    }
 }
