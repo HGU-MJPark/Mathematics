@@ -51,8 +51,8 @@ int main(void){
         fprintf(fp,"(and ");
         for(j=1; j<=6; j++){
             fprintf(fp,"(or ");
-            for(n=1; n<=5; n++){
-                fprintf(fp,"p%d%d%d ", i, j, s[n]);
+            for(n=0; n<6; n++){
+                fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
         }
