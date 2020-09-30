@@ -173,7 +173,6 @@ int main(void){
                     n=output[3]-'0';
                     out[i-1][j-1]=n;
                 }
-                 
     }
     pclose(fin);
     
