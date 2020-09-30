@@ -6,7 +6,7 @@ int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
-    //int out[9][9];
+    int out[9][9];
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -154,20 +154,19 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
                 if(strcmp(buf,str)==0){
-                    i=atoi(&output[1]);
-                    printf("%d ", i);
-                    j=atoi(&output[2]);
-                    n=atoi(&output[3]);
-                    //out[i-1][j-1]=n;
+                    i=output[1]-'0';
+                    j=output[2]-'0';
+                    n=output[3]-'0';
+                    out[i-1][j-1]=n;
                 }
                  
     }
     pclose(fin);
     
-    /*for(i=0; i<9; i++){
+    for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             printf("%d ", out[i][j]);
         }
         printf("\n");
-    }*/
+    }
 }
