@@ -145,7 +145,7 @@ int main(void){
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-                strcpy(output, buf);
+                strncpy(output, buf,4);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
@@ -165,3 +165,4 @@ int main(void){
         printf("\n");
     }
 }
+
