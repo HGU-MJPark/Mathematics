@@ -23,7 +23,7 @@ int main(void){
         for(j=0; j<9; j++){
             scanf("%d",&out[i][j]);
             if(out[i][j]!=0)
-            fprintf(fp,"p%d%d%d ",i,j,out[i][j]);
+            fprintf(fp,"p%d%d%d ",i+1,j+1,out[i][j]);
             }
     }
     fprintf(fp,"))\n");
