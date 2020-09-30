@@ -151,6 +151,7 @@ int main(void){
                 strncpy(output, buf,4);
         printf("%c ",output[1]);
         printf("%c",output[2]);
+        printf("%c", str[2]);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
