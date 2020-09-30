@@ -149,7 +149,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
                 strncpy(output, buf,4);
-                printf("%s", output);
+                printf("%s", output[2]);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
@@ -162,10 +162,10 @@ int main(void){
     }
     pclose(fin);
     
-    for(i=0; i<9; i++){
+    /*for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             printf("%d ", out[i][j]);
         }
         printf("\n");
-    }
+    }*/
 }
