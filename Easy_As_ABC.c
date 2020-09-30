@@ -33,7 +33,7 @@ int main(void){
     getchar();
     for(i=0; i<N; i++){
         scanf("%c", &in);
-        if(strcmp(&in,&s[0])!=0){
+        if(strncmp(&in,s,1)!=0){
             fprintf(fp,"(or (and p6%d%c p5%d%c) p6%d%c)",i+1,s[0],i+1,in,i+1,in);
         }
       
@@ -41,7 +41,7 @@ int main(void){
     getchar();
     for(i=0; i<N; i++){
         scanf("%c", &in);
-        if(strcmp(&in,&s[0])!=0){
+        if(strncmp(&in,s,1)!=0){
             fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[0],i+1,in,i+1,in);
         }
       
@@ -49,7 +49,7 @@ int main(void){
     getchar();
     for(i=0; i<N; i++){
         scanf("%c", &in);
-        if(strcmp(&in,&s[0])!=0){
+       if(strncmp(&in,s,1)!=0){
             fprintf(fp,"(or (and p%d6%c p%d5%c) p%d6%c)",i+1,s[0],i+1,in,i+1,in);
         }
         
