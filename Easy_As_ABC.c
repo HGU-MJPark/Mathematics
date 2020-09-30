@@ -25,6 +25,7 @@ int main(void){
     
     if(N>5){
         s[5]='_';
+        p=70;
         for(k=6; k<N; k++){
             s[k]=p;
             p++;
