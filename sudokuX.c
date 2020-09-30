@@ -140,7 +140,7 @@ int main(void){
     FILE * fin = popen("z3 formula.txt", "r") ;
     char buf[128] ;
     char output[128];
-    char true[]= "true";
+    char str= "true";
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
@@ -149,8 +149,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
-                if(strncmp(buf,true,4)==0){
-                    printf("안녕");
+                if(strncmp(buf,str,4)==0){
                     i=atoi(&output[1]);
                     j=atoi(&output[2]);
                     n=atoi(&output[3]);
@@ -166,4 +165,3 @@ int main(void){
         printf("\n");
     }
 }
-
