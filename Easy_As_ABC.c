@@ -25,7 +25,7 @@ int main(void){
     fprintf(fp,"(assert (and ");
     for(i=0; i<N; i++){
         scanf("%c", &in);
-        if(strncmp(in,s,1)!=0){
+        if(strncmp(&in,s,1)!=0){
             fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[0],i+1,in,i+1,in);
         }
         
