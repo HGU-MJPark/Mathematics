@@ -154,6 +154,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
                 if(strcmp(buf,str)==0){
                     i=atoi(&output[1]);
+                    printf("%d", i);
                     j=atoi(&output[2]);
                     n=atoi(&output[3]);
                     //out[i-1][j-1]=n;
