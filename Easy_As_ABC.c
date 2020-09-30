@@ -6,29 +6,26 @@ int main(void){
     
     int i,j,n,m;
     int N;
-    char s[]={'_','A','B','C','D','E'};
+    char s[]={'A','B','C','D','E'};
     char in;
-    
     char k;
     char p;
-    
-    
-    
+
     
     printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     scanf("%d",&N);
-  
     
     while(N<5 || N>10){
         printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
         scanf("%d",&N);
     }
+    
     getchar();
     char out[N][N];
     
-    if(N>6){
+    if(N>5){
         p=70;
-        for(k=6; k<N; k++){
+        for(k=5; k<N; k++){
             s[k]=p;
             p++;
         }
@@ -46,7 +43,7 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[0],i+1,in,i+1,in);
+            fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[N],i+1,in,i+1,in);
         }
         
     }
@@ -54,7 +51,7 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[0],N-1,i+1,in,N,i+1,in);
+            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[N],N-1,i+1,in,N,i+1,in);
         }
       
     }
@@ -62,7 +59,7 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[0],i+1,in,i+1,in);
+            fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[N],i+1,in,i+1,in);
         }
       
     }
@@ -70,28 +67,11 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
        if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[0],i+1,N-1,in,i+1,N,in);
+            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[N],i+1,N-1,in,i+1,N,in);
         }
         
     }
     fprintf(fp,"))\n");
-    
-    
-    
-    /*
-    fprintf(fp, "(assert (and");
-    fprintf(fp, "(or (and p11%c p21%c) p11%c)", s[0],s[1],s[1]);
-    fprintf(fp, "(or (and p14%c p24%c) p14%c)", s[0],s[5],s[5]);
-    fprintf(fp, "(or (and p31%c p32%c) p31%c)", s[0],s[1],s[1]);
-    fprintf(fp, "(or (and p41%c p42%c) p41%c)", s[0],s[4],s[4]);
-    fprintf(fp, "(or (and p62%c p52%c) p62%c)", s[0],s[2],s[2]);
-    fprintf(fp, "(or (and p63%c p53%c) p63%c)", s[0],s[3],s[3]);
-    fprintf(fp, "(or (and p66%c p56%c) p66%c)", s[0],s[1],s[1]);
-    fprintf(fp, "(or (and p16%c p15%c) p16%c)", s[0],s[5],s[5]);;;;;;;
-    fprintf(fp, "(or (and p36%c p35%c) p36%c)", s[0],s[2],s[2]);
-    fprintf(fp, "(or (and p46%c p45%c) p46%c)));\n", s[0],s[5],s[5]);
-    */
-
     
     fprintf(fp,"(assert (and ");
     for(i=1; i<=N; i++){
