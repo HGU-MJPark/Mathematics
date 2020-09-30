@@ -178,7 +178,7 @@ int main(void){
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
             if(out[i][j]>69)
-                printf("_");
+                printf("_ ");
             
             else
                 printf("%c ", out[i][j]);
