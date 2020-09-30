@@ -17,8 +17,9 @@ int main(void){
             }
         }
     }
+    printf("%c",s[0]);
     
-    printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
+    /*printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     scanf("%d",&N);
     getchar();
     fprintf(fp,"(assert (and ");
@@ -54,6 +55,7 @@ int main(void){
         
     }
     fprintf(fp,"))\n");
+     */
     
     
     /*
