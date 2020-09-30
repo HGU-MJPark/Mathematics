@@ -143,15 +143,15 @@ int main(void){
     FILE * fin = popen("z3 formula.txt", "r") ;
     char buf[128] ;
     char output[128];
-    char str[5]= "true)";
+    //char str[5]= "true)";
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-                strncpy(output, buf,4);
+               /* strncpy(output, buf,4);
         printf("%c ",output[1]);
         printf("%c",output[2]);
-        printf("%c ", str[2]);
+        printf("%c ", str[2]);*/
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
