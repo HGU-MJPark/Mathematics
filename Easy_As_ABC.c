@@ -23,6 +23,11 @@ int main(void){
     printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     scanf("%d",&N);
     getchar();
+    
+    while(N<5 || N>10){
+        printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
+    }
+        
     fprintf(fp,"(assert (and ");
     for(i=0; i<N; i++){
         scanf("%c", &in);
@@ -35,7 +40,7 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p6%d%c p5%d%c) p6%d%c)",i+1,s[0],i+1,in,i+1,in);
+            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[0],N-1,i+1,in,N,i+1,in);
         }
       
     }
@@ -51,7 +56,7 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
        if(strncmp(&in,s,1)!=0){
-            fprintf(fp,"(or (and p%d6%c p%d5%c) p%d6%c)",i+1,s[0],i+1,in,i+1,in);
+            fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[0],i+1,N-1,in,i+1,N,in);
         }
         
     }
@@ -75,13 +80,13 @@ int main(void){
 
     
     fprintf(fp,"(assert (and ");
-    for(i=1; i<=6; i++){
+    for(i=1; i<=N; i++){
         fprintf(fp,"(and ");
-        for(j=1; j<=6; j++){
+        for(j=1; j<=N; j++){
             fprintf(fp,"(and ");
-            for(n=0; n<5; n++){
+            for(n=0; n<N-1; n++){
                 fprintf(fp,"(and ");
-                for(m=n+1; m<6; m++){
+                for(m=n+1; m<N; m++){
                     fprintf(fp,"(not (and p%d%d%c p%d%d%c))", i, j, s[n], i, j,s[m]) ;
                 }
                 fprintf(fp,")");
@@ -93,11 +98,11 @@ int main(void){
     fprintf(fp,"))\n");
     
     fprintf(fp,"(assert (and ");
-    for(i=1; i<=6; i++){
+    for(i=1; i<=N; i++){
         fprintf(fp,"(and ");
-        for(j=1; j<=6; j++){
+        for(j=1; j<=N; j++){
             fprintf(fp,"(or ");
-            for(n=0; n<6; n++){
+            for(n=0; n<N; n++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
@@ -107,11 +112,11 @@ int main(void){
     fprintf(fp,"))\n");
 
     fprintf(fp, "(assert (and ");
-    for(i=1; i<=6; i++){
+    for(i=1; i<=N; i++){
         fprintf(fp,"(and ");
-        for(n=0; n<6; n++){
+        for(n=0; n<N; n++){
             fprintf(fp,"(or ");
-            for(j=1; j<=6; j++){
+            for(j=1; j<=N; j++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
@@ -121,11 +126,11 @@ int main(void){
     fprintf(fp,"))\n");
     
     fprintf(fp, "(assert (and ");
-    for(j=1; j<=6; j++){
+    for(j=1; j<=N; j++){
         fprintf(fp,"(and ");
-        for(n=0; n<6; n++){
+        for(n=0; n<N; n++){
             fprintf(fp,"(or ");
-            for(i=1; i<=6; i++){
+            for(i=1; i<=N; i++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
@@ -158,8 +163,8 @@ int main(void){
     }
     pclose(fin);
     
-    for(i=0; i<6; i++){
-        for(j=0; j<6; j++){
+    for(i=0; i<N; i++){
+        for(j=0; j<N; j++){
             printf("%c ", out[i][j]);
         }
         printf("\n");
