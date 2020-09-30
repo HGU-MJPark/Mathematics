@@ -160,7 +160,7 @@ int main(void){
     
     for(i=0; i<6; i++){
         for(j=0; j<6; j++){
-            printf("%d ", out[i][j]);
+            printf("%c ", out[i][j]);
         }
         printf("\n");
     }
