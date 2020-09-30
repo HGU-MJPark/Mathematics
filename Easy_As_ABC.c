@@ -8,6 +8,7 @@ int main(void){
     int N;
     char s[6]={'_','A','B','C','D','E'};
     char in;
+    char out[6][6];
     
     
     for (i = 1 ; i <= 6 ; i++){
@@ -139,13 +140,28 @@ int main(void){
 
     FILE * fin = popen("z3 abc_formula", "r") ;
     char buf[128] ;
+    char output[128];
+    char str[5]= "true)";
     fscanf(fin, "%s %s", buf, buf) ;
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+                strncpy(output, buf,4);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
+                if(strcmp(buf,str)==0){
+                    i=output[1]-'0';
+                    j=output[2]-'0';
+                    out[i-1][j-1]=output[3];
+                }
     }
     pclose(fin);
+    
+    for(i=0; i<6; i++){
+        for(j=0; j<6; j++){
+            printf("%d ", out[i][j]);
+        }
+        printf("\n");
+    }
 }
