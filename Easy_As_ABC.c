@@ -8,7 +8,7 @@ int main(void){
     int N;
     char s[]={'_','A','B','C','D','E'};
     char in;
-    char out[6][6];
+    
     char k;
     
     
@@ -21,9 +21,12 @@ int main(void){
     while(N<5 || N>10){
         printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     }
+    char out[N][N];
+    
     if(N>6){
         for(k=N; k>6; k--){
             s[k-1]=k;
+            
         }
     }
     
