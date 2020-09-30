@@ -153,6 +153,7 @@ int main(void){
         printf("%c",output[2]);
         printf("%c ", str[2]);*/
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
+        printf("%s", buf);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
                 /*if(strcmp(buf,str)==0){
