@@ -6,8 +6,8 @@ int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
-    int in[9][9];
-    int out[9][9];
+    char in[9][9];
+    char out[9][9];
     char p='?';
     char a[100];
     int num=0;
