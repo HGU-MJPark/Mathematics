@@ -19,7 +19,7 @@ int main(void){
     printf("Input of Sudoku-X. If the number is empty, enter 0.");
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
-        for(j=0; j<0; j++){
+        for(j=0; j<9; j++){
             scanf("%d ",&out[i][j]);
             if(out[i][j]!=0)
                 fprintf(fp,"p%d%d%d ",i,j,out[i][j]);
