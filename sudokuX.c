@@ -8,7 +8,7 @@ int main(void){
     int i, j, r, s, n, m;
     char in[9][9];
     char out[9][9];
-    char str='?';
+    char p='?';
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -24,7 +24,7 @@ int main(void){
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             scanf("%c",&in[i][j]);
-            if(strcmp(&in[i][j],&str)!=0)
+            if(strcmp(&in[i][j],&p)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             }
     }
