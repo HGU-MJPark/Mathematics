@@ -26,9 +26,9 @@ int main(void){
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             scanf("%c",&in[i][j]);
-            num=in[i][j]-'0'
+            num=in[i][j]-'0';
             if(num<10)
-            fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
+                fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             getchar();
             }
     }
