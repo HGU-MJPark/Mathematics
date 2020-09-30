@@ -4,9 +4,9 @@
 int main(void){
     FILE * fp = fopen("abc_formula", "w") ;
     
-    int i,j,n,m;
+    int i,j,n,m,k;
     int N;
-    char s[6]={'_','A','B','C','D','E'};
+    char s[]={'_','A','B','C','D','E'};
     char in;
     char out[6][6];
     
@@ -25,6 +25,11 @@ int main(void){
     
     while(N<5 || N>10){
         printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
+    }
+    if(N>6){
+        for(k=N; k>6; k--){
+            s[k-1]='_';
+        }
     }
         
     fprintf(fp,"(assert (and ");
@@ -83,9 +88,9 @@ int main(void){
         fprintf(fp,"(and ");
         for(j=1; j<=N; j++){
             fprintf(fp,"(and ");
-            for(n=0; n<N-1; n++){
+            for(n=0; n<5; n++){
                 fprintf(fp,"(and ");
-                for(m=n+1; m<N; m++){
+                for(m=n+1; m<6; m++){
                     fprintf(fp,"(not (and p%d%d%c p%d%d%c))", i, j, s[n], i, j,s[m]) ;
                 }
                 fprintf(fp,")");
@@ -101,7 +106,7 @@ int main(void){
         fprintf(fp,"(and ");
         for(j=1; j<=N; j++){
             fprintf(fp,"(or ");
-            for(n=0; n<N; n++){
+            for(n=0; n<6; n++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
@@ -113,7 +118,7 @@ int main(void){
     fprintf(fp, "(assert (and ");
     for(i=1; i<=N; i++){
         fprintf(fp,"(and ");
-        for(n=0; n<N; n++){
+        for(n=0; n<6; n++){
             fprintf(fp,"(or ");
             for(j=1; j<=N; j++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
@@ -127,7 +132,7 @@ int main(void){
     fprintf(fp, "(assert (and ");
     for(j=1; j<=N; j++){
         fprintf(fp,"(and ");
-        for(n=0; n<N; n++){
+        for(n=0; n<6; n++){
             fprintf(fp,"(or ");
             for(i=1; i<=N; i++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
@@ -169,4 +174,3 @@ int main(void){
         printf("\n");
     }
 }
-
