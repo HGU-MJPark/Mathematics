@@ -6,9 +6,10 @@ int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
-    char in[9][9];
-    char out[9][9];
+    int in[9][9];
+    int out[9][9];
     char p='?';
+    char a[10];
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -24,7 +25,7 @@ int main(void){
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             scanf("%d",&in[i][j]);
-            if(strncmp(&in[i][j],&p,1)!=0)
+            if(strncmp(itoa(in[i][j],a,10),&p,1)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             getchar();
             }
