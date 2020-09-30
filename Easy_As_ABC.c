@@ -4,11 +4,12 @@
 int main(void){
     FILE * fp = fopen("abc_formula", "w") ;
     
-    int i,j,n,m,k;
+    int i,j,n,m;
     int N;
     char s[]={'_','A','B','C','D','E'};
     char in;
     char out[6][6];
+    char k;
     
     
     
