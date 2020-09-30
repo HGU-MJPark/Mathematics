@@ -16,7 +16,8 @@ int main(void){
         }
     }
     
-    printf("Input of Sudoku-X. If the number is empty, enter 0.");
+    printf("Input of Sudoku-X. If the number is empty, enter 0.\n");
+    printf("Enter 'enter' when entering the next line.\n");
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
@@ -24,7 +25,6 @@ int main(void){
             if(out[i][j]!=0)
                 fprintf(fp,"p%d%d%d ",i,j,out[i][j]);
         }
-        printf("\n");
     }
     fprintf(fp,"))\n");
     
