@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void){
     FILE * fp = fopen("abc_formula", "w") ;
     
     int i,j,n,m;
+    int N;
     char s[6]={' ','A','B','C','D','E'};
+    char in;
+    
     
     for (i = 1 ; i <= 6 ; i++){
         for (j = 1 ; j <= 6 ; j++){
@@ -14,6 +18,37 @@ int main(void){
         }
     }
     
+    printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
+    scanf("%d",&N);
+    fprintf(fp,"(assert (and ");
+    for(i=0; i<N; i++){
+        scanf("%c", &in);
+        if(strcmp(&in,&s[0])!=0){
+            fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i,s[0],i,in,i,in);
+        }
+    }
+    for(i=0; i<N; i++){
+        scanf("%c", &in);
+        if(strcmp(&in,&s[0])!=0){
+            fprintf(fp,"(or (and p6%d%c p5%d%c) p6%d%c)",i,s[0],i,in,i,in);
+        }
+    }
+    for(i=0; i<N; i++){
+        scanf("%c", &in);
+        if(strcmp(&in,&s[0])!=0){
+            fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i,s[0],i,in,i,in);
+        }
+    }
+    for(i=0; i<N; i++){
+        scanf("%c", &in);
+        if(strcmp(&in,&s[0])!=0){
+            fprintf(fp,"(or (and p%d6%c p%d5%c) p%d6%c)",i,s[0],i,in,i,in);
+        }
+    }
+    fprintf(fp,"))\n");
+    
+    
+    /*
     fprintf(fp, "(assert (and");
     fprintf(fp, "(or (and p11%c p21%c) p11%c)", s[0],s[1],s[1]);
     fprintf(fp, "(or (and p14%c p24%c) p14%c)", s[0],s[5],s[5]);
@@ -22,10 +57,10 @@ int main(void){
     fprintf(fp, "(or (and p62%c p52%c) p62%c)", s[0],s[2],s[2]);
     fprintf(fp, "(or (and p63%c p53%c) p63%c)", s[0],s[3],s[3]);
     fprintf(fp, "(or (and p66%c p56%c) p66%c)", s[0],s[1],s[1]);
-    fprintf(fp, "(or (and p16%c p15%c) p16%c)", s[0],s[5],s[5]);
+    fprintf(fp, "(or (and p16%c p15%c) p16%c)", s[0],s[5],s[5]);;;;;;;
     fprintf(fp, "(or (and p36%c p35%c) p36%c)", s[0],s[2],s[2]);
     fprintf(fp, "(or (and p46%c p45%c) p46%c)));\n", s[0],s[5],s[5]);
-    
+    */
 
     
     fprintf(fp,"(assert (and ");
