@@ -43,7 +43,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,&s[5])!=0){
+            if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[5],i+1,in,i+1,in);
             }
         }
@@ -58,7 +58,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,&s[5])!=0){
+            if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[5],N-1,i+1,in,N,i+1,in);
             }
         }
@@ -73,7 +73,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,&s[5])!=0){
+            if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[5],i+1,in,i+1,in);
             }
         }
@@ -88,7 +88,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-           if(strcmp(&in,&s[5])!=0){
+           if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[5],i+1,N-1,in,i+1,N,in);
             }
         }
