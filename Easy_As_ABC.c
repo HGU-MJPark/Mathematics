@@ -90,9 +90,9 @@ int main(void){
         fprintf(fp,"(and ");
         for(j=1; j<=N; j++){
             fprintf(fp,"(and ");
-            for(n=0; n<5; n++){
+            for(n=0; n<N-1; n++){
                 fprintf(fp,"(and ");
-                for(m=n+1; m<6; m++){
+                for(m=n+1; m<N; m++){
                     fprintf(fp,"(not (and p%d%d%c p%d%d%c))", i, j, s[n], i, j,s[m]) ;
                 }
                 fprintf(fp,")");
@@ -108,7 +108,7 @@ int main(void){
         fprintf(fp,"(and ");
         for(j=1; j<=N; j++){
             fprintf(fp,"(or ");
-            for(n=0; n<6; n++){
+            for(n=0; n<N; n++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
             }
             fprintf(fp,")");
@@ -120,7 +120,7 @@ int main(void){
     fprintf(fp, "(assert (and ");
     for(i=1; i<=N; i++){
         fprintf(fp,"(and ");
-        for(n=0; n<6; n++){
+        for(n=0; n<N; n++){
             fprintf(fp,"(or ");
             for(j=1; j<=N; j++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
@@ -134,7 +134,7 @@ int main(void){
     fprintf(fp, "(assert (and ");
     for(j=1; j<=N; j++){
         fprintf(fp,"(and ");
-        for(n=0; n<6; n++){
+        for(n=0; n<N; n++){
             fprintf(fp,"(or ");
             for(i=1; i<=N; i++){
                 fprintf(fp,"p%d%d%c ", i, j, s[n]);
