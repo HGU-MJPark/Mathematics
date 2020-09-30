@@ -10,6 +10,7 @@ int main(void){
     char in;
     
     char k;
+    char p;
     
     
     
@@ -24,9 +25,10 @@ int main(void){
     char out[N][N];
     
     if(N>6){
-        for(k=N; k>6; k--){
-            s[k-1]=k;
-            
+        p=70;
+        for(k=6; k<N; k++){
+            s[k]=p;
+            p++;
         }
     }
     
@@ -175,7 +177,7 @@ int main(void){
     
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
-            if(out[i][j]!=' ' || out[i][j]!='A' || out[i][j]!='B'|| out[i][j]!='C'|| out[i][j]!='D' || out[i][j]!='E')
+            if(out[i][j]>69)
                 printf("_");
             
             else
