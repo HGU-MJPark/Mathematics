@@ -25,7 +25,8 @@ int main(void){
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             scanf("%d",&in[i][j]);
-            if(strncmp(itoa(in[i][j],a,10),&p,1)!=0)
+            itoa(in[i][j],a,10);
+            if(strncmp(&a,&p,1)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             getchar();
             }
