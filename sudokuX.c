@@ -6,8 +6,9 @@ int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
-    int in[9][9];
-    int out[9][9];
+    char in[9][9];
+    char out[9][9];
+    char s='?';
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -17,13 +18,13 @@ int main(void){
         }
     }
     
-    printf("Enter the value of Sudoku-X. If the value is empty, enter 0.\n");
+    printf("Enter the value of Sudoku-X. If the value is empty, enter ?.\n");
     printf("Enter 'enter' when entering the next line.\n");
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
-            scanf("%d",&in[i][j]);
-            if(in[i][j]!=0)
+            scanf("%c",&in[i][j]);
+            if(strcmp(in[i][j],s)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             }
     }
