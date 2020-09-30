@@ -172,7 +172,11 @@ int main(void){
     
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
-            printf("%c ", out[i][j]);
+            if(out[i][j]!=' ' || out[i][j]!='A' || out[i][j]!='B'|| out[i][j]!='C'|| out[i][j]!='D' || out[i][j]!='E')
+                printf("_");
+            
+            else
+                printf("%c ", out[i][j]);
         }
         printf("\n");
     }
