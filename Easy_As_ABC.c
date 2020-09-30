@@ -47,12 +47,14 @@ int main(void){
             if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[5],i+1,in,i+1,in);
             }
+            getchar();
         }
     }
     else{
         for(i=0; i<N; i++){
             scanf("%c", &in);
             fprintf(fp,"p1%d%c)",i+1,in);
+            getchar();
         }
     }
     getchar();
@@ -62,12 +64,14 @@ int main(void){
             if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[5],N-1,i+1,in,N,i+1,in);
             }
+            getchar();
         }
     }
     else{
         for(i=0; i<N; i++){
             scanf("%c", &in);
             fprintf(fp,"p%d%d%c)",N,i+1,in);
+            getchar();
         }
     }
     getchar();
@@ -77,12 +81,14 @@ int main(void){
             if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[5],i+1,in,i+1,in);
             }
+            getchar();
         }
     }
     else{
         for(i=0; i<N; i++){
             scanf("%c", &in);
             fprintf(fp,"p%d1%c)",i+1,in);
+            getchar();
         }
     }
     getchar();
@@ -92,12 +98,14 @@ int main(void){
            if(strncmp(&in,&s[5],1)!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[5],i+1,N-1,in,i+1,N,in);
             }
+            getchar();
         }
     }
     else{
         for(i=0; i<N; i++){
             scanf("%c", &in);
             fprintf(fp,"p%d%d%c)",i+1,N,in);
+            getchar();
         }
     }
     fprintf(fp,"))\n");
