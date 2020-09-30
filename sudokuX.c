@@ -145,16 +145,17 @@ int main(void){
     while (!feof(fin)) {
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
-                strncpy(output, buf,4);
+        printf("%s",buf);
+                //strncpy(output, buf,4);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
-                if(strncmp(buf,str,4)==0){
+                /*if(strncmp(buf,str,4)==0){
                     i=atoi(&output[1]);
                     j=atoi(&output[2]);
                     n=atoi(&output[3]);
                     out[i-1][j-1]=n;
-                }
+                }*/
     }
     pclose(fin);
     
