@@ -10,6 +10,7 @@ int main(void){
     int out[9][9];
     char p='?';
     char a[100];
+    int num=0;
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
@@ -24,9 +25,9 @@ int main(void){
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
-            scanf("%d",&in[i][j]);
-            itoa(in[i][j],a,10);
-            if(strncmp(&a,&p,1)!=0)
+            scanf("%c",&in[i][j]);
+            num=in[i][j]-'0'
+            if(num<10)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             getchar();
             }
