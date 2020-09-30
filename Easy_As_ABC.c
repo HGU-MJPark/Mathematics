@@ -24,25 +24,25 @@ int main(void){
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strcmp(&in,&s[0])!=0){
-            fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i,s[0],i,in,i,in);
+            fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[0],i+1,in,i+1,in);
         }
     }
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strcmp(&in,&s[0])!=0){
-            fprintf(fp,"(or (and p6%d%c p5%d%c) p6%d%c)",i,s[0],i,in,i,in);
+            fprintf(fp,"(or (and p6%d%c p5%d%c) p6%d%c)",i+1,s[0],i+1,in,i+1,in);
         }
     }
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strcmp(&in,&s[0])!=0){
-            fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i,s[0],i,in,i,in);
+            fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[0],i+1,in,i+1,in);
         }
     }
     for(i=0; i<N; i++){
         scanf("%c", &in);
         if(strcmp(&in,&s[0])!=0){
-            fprintf(fp,"(or (and p%d6%c p%d5%c) p%d6%c)",i,s[0],i,in,i,in);
+            fprintf(fp,"(or (and p%d6%c p%d5%c) p%d6%c)",i+1,s[0],i+1,in,i+1,in);
         }
     }
     fprintf(fp,"))\n");
