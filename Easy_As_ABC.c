@@ -57,7 +57,7 @@ int main(void){
             getchar();
         }
     }
-    getchar();
+    //getchar();
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
@@ -74,7 +74,7 @@ int main(void){
             getchar();
         }
     }
-    getchar();
+    //getchar();
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
@@ -91,7 +91,7 @@ int main(void){
             getchar();
         }
     }
-    getchar();
+    //getchar();
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
