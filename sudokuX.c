@@ -6,6 +6,7 @@ int main(void){
     FILE * fp = fopen("formula.txt", "w") ;
 
     int i, j, r, s, n, m;
+    int in[9][9];
     int out[9][9];
 
     for (i = 1 ; i <= 9 ; i++){
@@ -21,9 +22,9 @@ int main(void){
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
-            scanf("%d",&out[i][j]);
-            if(out[i][j]!=0)
-            fprintf(fp,"p%d%d%d ",i+1,j+1,out[i][j]);
+            scanf("%d",&in[i][j]);
+            if(in[i][j]!=0)
+            fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             }
     }
     fprintf(fp,"))\n");
