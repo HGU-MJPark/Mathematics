@@ -150,6 +150,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s\n", buf) ;
                 if(strncmp(buf,true,4)==0){
+                    printf("안녕");
                     i=atoi(&output[1]);
                     j=atoi(&output[2]);
                     n=atoi(&output[3]);
