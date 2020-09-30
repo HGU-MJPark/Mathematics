@@ -149,7 +149,7 @@ int main(void){
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
                 strncpy(output, buf,4);
-        printf("%c",output[1]);
+        printf("%c ",output[1]);
         printf("%c",output[2]);
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
         fscanf(fin, "%s", buf) ; printf("%s ", buf) ;
