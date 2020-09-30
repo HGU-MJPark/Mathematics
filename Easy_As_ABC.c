@@ -17,11 +17,13 @@ int main(void){
     
     printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     scanf("%d",&N);
-    getchar();
+  
     
     while(N<5 || N>10){
         printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
+        scanf("%d",&N);
     }
+    getchar();
     char out[N][N];
     
     if(N>6){
