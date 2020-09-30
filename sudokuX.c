@@ -26,6 +26,7 @@ int main(void){
             scanf("%c",&in[i][j]);
             if(strcmp(&in[i][j],&p)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
+            getchar();
             }
     }
     fprintf(fp,"))\n");
