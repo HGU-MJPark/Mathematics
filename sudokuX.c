@@ -23,8 +23,8 @@ int main(void){
     fprintf(fp,"(assert (and ");
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
-            scanf("%c",&in[i][j]);
-            if(strcmp(&in[i][j],&p)!=0)
+            scanf("%d",&in[i][j]);
+            if(strncmp(&in[i][j],&p,1)!=0)
             fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
             getchar();
             }
