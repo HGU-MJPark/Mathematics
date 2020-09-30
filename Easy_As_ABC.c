@@ -24,8 +24,8 @@ int main(void){
     char out[N][N];
     
     if(N>5){
-        p=70;
-        for(k=5; k<N; k++){
+        s[5]='_';
+        for(k=6; k<N; k++){
             s[k]=p;
             p++;
         }
@@ -43,7 +43,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,s[5])!=0){
+            if(strcmp(&in,&s[5])!=0){
                 fprintf(fp,"(or (and p1%d%c p2%d%c) p1%d%c)",i+1,s[5],i+1,in,i+1,in);
             }
         }
@@ -57,7 +57,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,s[5])!=0){
+            if(strcmp(&in,&s[5])!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",N,i+1,s[5],N-1,i+1,in,N,i+1,in);
             }
         }
@@ -71,7 +71,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            if(strcmp(&in,s[5])!=0){
+            if(strcmp(&in,&s[5])!=0){
                 fprintf(fp,"(or (and p%d1%c p%d2%c) p%d1%c)",i+1,s[5],i+1,in,i+1,in);
             }
         }
@@ -85,7 +85,7 @@ int main(void){
     if(N>5){
         for(i=0; i<N; i++){
             scanf("%c", &in);
-           if(strcmp(&in,s[5])!=0){
+           if(strcmp(&in,&s[5])!=0){
                 fprintf(fp,"(or (and p%d%d%c p%d%d%c) p%d%d%c)",i+1,N,s[5],i+1,N-1,in,i+1,N,in);
             }
         }
