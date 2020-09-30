@@ -9,7 +9,7 @@ int main(void){
     int in[9][9];
     int out[9][9];
     char p='?';
-    char a[10];
+    char a[100];
 
     for (i = 1 ; i <= 9 ; i++){
         for (j = 1 ; j <= 9 ; j++){
