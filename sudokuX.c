@@ -28,7 +28,7 @@ int main(void){
             scanf("%c",&in[i][j]);
             num=in[i][j]-'0';
             if(num<10)
-                fprintf(fp,"p%d%d%d ",i+1,j+1,in[i][j]);
+                fprintf(fp,"p%d%d%c ",i+1,j+1,in[i][j]);
             getchar();
             }
     }
