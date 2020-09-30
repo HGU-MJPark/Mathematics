@@ -50,8 +50,9 @@ int main(void){
     }
     else{
         for(i=0; i<N; i++){
-        scanf("%c", &in);
+            scanf("%c", &in);
             fprintf(fp,"p1%d%c)",i+1,in);
+        }
     }
     getchar();
     if(N>5){
@@ -64,8 +65,9 @@ int main(void){
     }
     else{
         for(i=0; i<N; i++){
-        scanf("%c", &in);
+            scanf("%c", &in);
             fprintf(fp,"p%d%d%c)",N,i+1,in);
+        }
     }
     getchar();
     if(N>5){
@@ -78,8 +80,9 @@ int main(void){
     }
     else{
         for(i=0; i<N; i++){
-        scanf("%c", &in);
+            scanf("%c", &in);
             fprintf(fp,"p%d1%c)",i+1,in);
+        }
     }
     getchar();
     if(N>5){
@@ -92,8 +95,9 @@ int main(void){
     }
     else{
         for(i=0; i<N; i++){
-        scanf("%c", &in);
+            scanf("%c", &in);
             fprintf(fp,"p%d1%c)",i+1,N,in);
+        }
     }
     fprintf(fp,"))\n");
     
@@ -191,4 +195,5 @@ int main(void){
         }
         printf("\n");
     }
+        return 0;
 }
