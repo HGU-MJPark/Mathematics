@@ -11,13 +11,7 @@ int main(void){
     char out[6][6];
     
     
-    for (i = 1 ; i <= 6 ; i++){
-        for (j = 1 ; j <= 6 ; j++){
-            for(n=0; n<6; n++){
-                fprintf(fp,"(declare-const p%d%d%c Bool)\n", i, j, s[n]) ;
-            }
-        }
-    }
+    
     
     printf("Enter the size(n) of the grid. The size should be between 5 and 10.\n");
     scanf("%d",&N);
@@ -29,6 +23,14 @@ int main(void){
     if(N>6){
         for(k=N; k>6; k--){
             s[k-1]='_';
+        }
+    }
+    
+    for (i = 1 ; i <= N ; i++){
+        for (j = 1 ; j <= N ; j++){
+            for(n=0; n<N; n++){
+                fprintf(fp,"(declare-const p%d%d%c Bool)\n", i, j, s[n]) ;
+            }
         }
     }
         
