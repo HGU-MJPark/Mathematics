@@ -16,6 +16,18 @@ int main(void){
         }
     }
     
+    printf("Input of Sudoku-X. If the number is empty, enter 0.");
+    fprintf(fp,"(assert (and ");
+    for(i=0; i<9; i++){
+        for(j=0; j<0; j++){
+            scanf("%d ",&out[i][j]);
+            if(out[i][j]!=0)
+                fprintf(fp,"p%d%d%d ",i,j,out[i][j]);
+        }
+        printf("\n");
+    }
+    fprintf(fp,"))\n");
+    
     /*fprintf(fp, "(assert (and ");
     printf("p(row,column) 의 값을 입력하시오. 비어있는 값은 0을 입력하시오.\n\n");
     for(i=1; i<=9; i++){
@@ -29,7 +41,9 @@ int main(void){
     fprintf(fp, "))\n");
     */
     
+    /*
     fprintf(fp, "(assert (and p123 p148 p154 p249 p335 p412 p425 p467 p474 p488 p531 p583 p627 p633 p691 p724 p838 p846 p879 p919))");
+    */
      
     fprintf(fp,"(assert (and ");
     for(i=1; i<=9; i++){
@@ -163,6 +177,7 @@ int main(void){
     }
     pclose(fin);
     
+    //show output
     for(i=0; i<9; i++){
         for(j=0; j<9; j++){
             printf("%d ", out[i][j]);
