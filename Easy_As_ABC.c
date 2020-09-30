@@ -6,7 +6,7 @@ int main(void){
     
     int i,j,n,m;
     int N;
-    char s[6]={' ','A','B','C','D','E'};
+    char s[6]={'_','A','B','C','D','E'};
     char in;
     
     
