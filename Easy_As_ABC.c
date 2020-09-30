@@ -22,7 +22,7 @@ int main(void){
     }
     if(N>6){
         for(k=N; k>6; k--){
-            s[k-1]='_';
+            s[k-1]=k;
         }
     }
     
