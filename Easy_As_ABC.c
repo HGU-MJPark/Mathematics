@@ -96,7 +96,7 @@ int main(void){
     else{
         for(i=0; i<N; i++){
             scanf("%c", &in);
-            fprintf(fp,"p%d1%c)",i+1,N,in);
+            fprintf(fp,"p%d%d%c)",i+1,N,in);
         }
     }
     fprintf(fp,"))\n");
